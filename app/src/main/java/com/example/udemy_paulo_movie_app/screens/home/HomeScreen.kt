@@ -11,8 +11,10 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
-import com.example.udemy_paulo_movie_app.MovieItem
+import com.example.udemy_paulo_movie_app.model.Movie
+import com.example.udemy_paulo_movie_app.model.getMovies
 import com.example.udemy_paulo_movie_app.navigation.MovieScreens
+import com.example.udemy_paulo_movie_app.widgets.MovieItem
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -43,12 +45,7 @@ fun HomeScreen(
 fun MainContent(
     navController: NavController,
     paddingValues: PaddingValues,
-    movieList: List<String> = listOf(
-        "Avatar",
-        "300",
-        "Harry Potter",
-        "Life"
-    )
+    movieList: List<Movie> = getMovies()
 ) {
     Surface(
         modifier = Modifier
