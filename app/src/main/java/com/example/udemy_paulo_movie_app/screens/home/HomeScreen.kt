@@ -64,7 +64,7 @@ fun MainContent(
                     items = movieList
                 ) {
                     MovieItem(it) { movieItem ->
-                        navController.navigate(route = MovieScreens.DetailScreen.name)
+                        navController.navigate(route = MovieScreens.DetailScreen.name + "/$movieItem")
                     }
                 }
             }
